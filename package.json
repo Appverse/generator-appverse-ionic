@@ -1,0 +1,36 @@
+{
+  "name": "generator-appverse-ionic",
+  "version": "0.0.1",
+  "description": "Appverse Ionic Yeoman generator",
+  "license": "MPL-2.0",
+  "main": "app/index.js",
+  "repository": "appverse/generator-appverse-ionic",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": "https://github.com/appverse"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "appverse",
+    "ionic",
+    "angularjs",
+    "mobile",
+    "html5", 
+    "bower",
+    "grunt"
+  ],
+  "dependencies": {
+     "appverse-generator-commons": "0.0.4",   
+     "yeoman-generator": "^0.22.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
