@@ -1,0 +1,76 @@
+<ion-view view-title="Charts">
+    <ion-content class="padding" ionic-scrolled>
+        <h2>Charts</h2>
+        <p>SAMPLES</p>
+        <hr>
+        <div class="card">
+            <div class="item item-divider item-positive">
+                Line chart
+            </div>
+            <div class="item item-text-wrap">
+               <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick" height="100"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider item-positive">
+                Bar
+            </div>
+            <div class="item item-text-wrap">
+                <canvas id="bar" class="chart chart-bar" data="data" labels="labels" click="onClick" height="100"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider item-positive">
+                Radar
+            </div>
+            <div class="item item-text-wrap">
+                <canvas id="radar" class="chart chart-radar" data="radarData" labels="radarLabels" click="onClick" height="100"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider item-positive">
+                Pie
+            </div>
+            <div class="item item-text-wrap">
+                <canvas id="pie" class="chart chart-pie chart-xs ng-isolate-scope" data="pieData" labels="pieLabels" legend="true" click="onClick"
+                height="100"></canvas>
+            </div>
+        </div>
+           <div class="card">
+            <div class="item item-divider item-positive">
+               Polar Area
+            </div>
+            <div class="item item-text-wrap">
+                 <canvas id="polar-area" class="chart chart-polar-area" data="polarData" labels="polarLabels" legend="true" click="onClick"
+                height="100"></canvas>
+            </div>
+        </div>
+          <div class="card">
+            <div class="item item-divider item-positive">
+               Doughnut
+            </div>
+            <div class="item item-text-wrap">
+                 <canvas id="doughnut" class="chart chart-doughnut" data="doughnutData" labels="doughnutLabels" legend="true" click="onClick"
+                height="100"></canvas>
+            </div>
+        </div>
+         <div class="card">
+            <div class="item item-divider item-positive">
+               Dynamic (switch interval - 10s)
+            </div>
+            <div class="item item-text-wrap">
+                 <canvas id="base" class="chart-base" chart-type="dynType" data="dynData" labels="dynLabels" legend="true"
+                height="100"></canvas>
+            </div>
+        </div>
+         <div class="card">
+            <div class="item item-divider item-positive">
+              Reactive (random data - 5s)
+            </div>
+            <div class="item item-text-wrap">
+                 <canvas id="tables" class="chart chart-line ng-isolate-scope" data="reactData" labels="reactLabels" colours="reactColours"
+                height="100"></canvas>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

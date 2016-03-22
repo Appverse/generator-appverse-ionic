@@ -1,0 +1,15 @@
+// POPUP CUSTOM STYLES
+.popup {
+  .popup-body {
+    background-color: #fff;
+
+    input[type="password"],
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      border: 1px solid $stable;
+      padding: 2px 5px;
+      border-radius: 2px;
+    }
+  }
+}

@@ -1,0 +1,224 @@
+<ion-view view-title="UI Components">
+  <ion-content class="padding" ionic-scrolled>
+    <h2>UI Components</h2>
+    <hr>
+    <div class="card">
+      <div class="item item-divider item-positive">
+        Explanation
+      </div>
+      <div class="item item-text-wrap">
+        <p>Ionic directives that provide components with functionality and interactions.</p>
+        <p>Created using
+          <a href="https://appverse.gftlabs.com/showcase-html5/#/theme">Appverse Theme</a>
+          as base.</p>
+      </div>
+    </div>
+    <div class="row responsive-sm">
+      <div class="col">
+        <h2>ion-list</h2>
+        <hr>
+        <div class="ionic ionic-example">
+          <ion-header-bar class="bar-positive">
+            <div class="buttons">
+              <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+            </div>
+            <h1 class="title">Ionic Delete/Option Buttons</h1>
+            <div class="buttons">
+              <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+                Reorder
+              </button>
+            </div>
+          </ion-header-bar>
+        </div>
+
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+          <ion-item class="item-remove-animate" href="#/item/{{item.id}}" item="item" ng-repeat="item in ionListItems">
+            Item
+            {{ item.id }}
+            <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+            <ion-option-button class="button-assertive" ng-click="edit(item)">
+              Edit
+            </ion-option-button>
+            <ion-option-button class="button-calm" ng-click="share(item)">
+              Share
+            </ion-option-button>
+            <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+          </ion-item>
+
+        </ion-list>
+      </div>
+      <div class="col">
+        <h2>Ionic Action Sheet</h2>
+        <hr>
+        <button class="button button-block button-positive" angular-ripple ng-click="showActionsheet()">
+          Open Action Sheet
+        </button>
+
+        <br>
+        <h2>Ionic Loading</h2>
+        <hr>
+        <button class="button button-block button-positive" angular-ripple ng-click="showLoading()">
+          Open Loading Mask
+        </button>
+
+        <br>
+        <h2>Ionic Modal</h2>
+        <hr>
+        <button class="button button-block button-positive" angular-ripple ng-click="openModal()">
+          Open Modal
+        </button>
+
+        <br>
+        <h2>Ionic Popover</h2>
+        <hr>
+        <button class="button button-block button-positive" angular-ripple ng-click="openPopover($event)">
+          Open Popover
+        </button>
+
+        <br>
+        <h2>Ionic Popup</h2>
+        <hr>
+        <div class="row">
+          <div class="col">
+            <button class="button button-block button-positive" angular-ripple ng-click="showPopup()">
+              Custom
+            </button>
+          </div>
+          <div class="col">
+            <button class="button button-block button-positive" angular-ripple ng-click="showConfirm()">
+              Confirm
+            </button>
+          </div>
+          <div class="col">
+            <button class="button button-block button-positive" angular-ripple ng-click="showAlert()">
+              Alert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h2>ion-slides</h2>
+    <hr>
+    <ion-slides options="sliderOptions" slider="data.slider">
+      <ion-slide-page>
+        <div class="box calm-bg padding">
+          <h2>Calm</h2>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <div class="box balanced-bg padding">
+          <h2>Balanced</h2>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <div class="box energized-bg padding">
+          <h2>Energized</h2>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <div class="box assertive-bg padding">
+          <h2>Assertive</h2>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+
+    <br>
+    <h2>ion-tabs</h2>
+    <hr>
+    <h4>Only Text Tabs</h4>
+    <div class="ionic-example">
+      <ion-tabs class="tabs-positive">
+
+        <ion-tab title="Home">
+          <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab title="About">
+          <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab title="Settings">
+          <!-- Tab 3 content -->
+        </ion-tab>
+
+      </ion-tabs>
+    </div>
+    <br>
+    <h4>Only Icon Tabs</h4>
+    <div class="ionic-example">
+      <ion-tabs class="tabs-calm tabs-icon-only">
+
+        <ion-tab icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" title="Home">
+          <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" title="About">
+          <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" title="Settings">
+          <!-- Tab 3 content -->
+        </ion-tab>
+
+      </ion-tabs>
+    </div>
+    <br>
+    <h4>Icon top tabs</h4>
+    <div class="ionic-example">
+      <ion-tabs class="tabs-royal tabs-icon-top">
+
+        <ion-tab icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" title="Home">
+          <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" title="About">
+          <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" title="Settings">
+          <!-- Tab 3 content -->
+        </ion-tab>
+
+      </ion-tabs>
+    </div>
+    <br>
+    <h4>Icon left tabs</h4>
+    <div class="ionic-example">
+      <ion-tabs class="tabs-dark tabs-icon-left">
+
+        <ion-tab icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" title="Home">
+          <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" title="About">
+          <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" title="Settings">
+          <!-- Tab 3 content -->
+        </ion-tab>
+
+      </ion-tabs>
+    </div>
+    <h4>Inverted colors tabs</h4>
+    <div class="ionic-example">
+      <ion-tabs class="tabs-color-assertive tabs-striped">
+
+        <ion-tab icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" title="Home">
+          <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" title="About">
+          <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" title="Settings">
+          <!-- Tab 3 content -->
+        </ion-tab>
+
+      </ion-tabs>
+    </div>
+  </ion-content>
+</ion-view>

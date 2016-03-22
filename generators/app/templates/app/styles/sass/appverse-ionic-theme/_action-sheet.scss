@@ -1,0 +1,11 @@
+// ACTIONSHEET CUSTOM STYLES
+.action-sheet-options {
+  border-top: 3px solid $positive;
+}
+
+.action-sheet-option {
+  i {
+    min-width: 25px;
+    text-align: center;
+  }
+}

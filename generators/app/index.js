@@ -21,38 +21,91 @@
 'use strict';
 var path = require('path');
 var fs = require('fs');
-var appverse = require ('appverse-generator-commons'); 
+var slug = require("underscore.string");
+var project = require('./config/project-config');
+var appverse = require('appverse-generator-commons');
 var pkg = require("../../package.json");
 
-var appversIonicGenerator = appverse.extend({
-  initializing: function() {
+module.exports = appverse.extend({
+    initializing: function() {
         this.conflicter.force = true;
         if (!this.options['skip-welcome-message']) {
             this.welcome(pkg);
             this.checkVersion();
-        } 
+        }
 
         if (this.options['skip-prompts']) {
             this.skipprompts = true;
         } else {
             this.skipprompts = false;
         } 
-        
-    },    
-    prompting: function ()  {
-        var prompts = []; 
-        var done = this.async();
-        this.prompt(prompts, function(props) { 
-           
-            done();
-        }.bind(this)); 
     },
-    writing:  function() {
-        
+    prompting: function() {
+        if (!this.skipprompts) {
+            var done = this.async();
+            var prompts = [{
+                name: 'appName',
+                message: 'What is your app\'s name ?  ' +
+                '\n Application name cannot contain special characters or a blank space. ' +
+                '\n Name will be slug if needed.  ',
+                default: slug.slugify(this.appname)
+            },
+                {
+                    type: "input",
+                    name: "hostname",
+                    message: "Appverse Mobile Builder Host name",
+                    default: "https://builderhostname"
+                }, {
+                    type: "input",
+                    name: "username",
+                    message: "User name",
+                    default: "username"
+                }, {
+                    type: "input",
+                    name: "password",
+                    message: "Password",
+                    default: "password"
+                }, {
+                    type: "input",
+                    name: "email",
+                    message: "E-mail",
+                    default: ""
+                }
+            ];
+
+            this.prompt(prompts, function(props) {
+                if (prompts.length > 0) {
+                    this.appName = slug.slugify(props.appName);
+                    this.username = props.username;
+                    this.password = props.password;
+                    this.email = props.email;
+                    this.props = props;
+                    this.env.options.appPath = this.options.appPath || 'app';
+                    this.config.set('appPath', this.env.options.appPath);
+                }
+                done();
+            }.bind(this));
+        }
     },
-    install: function () {
-        
-    }, 
+    writing: function() {
+        //FILES
+        this.moveFiles(this.templatePath(), project.files);
+        //TEMPLATES
+        this.moveTemplates(this.templatePath(), project.templates);
+    },
+    install: function() {
+        this.installDependencies({
+            skipInstall: this.options['skip-install'],
+            callback: function() {
+                // Emit a new event - dependencies installed
+                this.emit('dependenciesInstalled');
+            }.bind(this)
+        });
+        //Now you can bind to the dependencies installed event
+        this.on('dependenciesInstalled', function() {
+            this.spawnCommand('grunt', ['list']);
+        });
+    },
     end: function() {
         this.log("Finish.");
     }

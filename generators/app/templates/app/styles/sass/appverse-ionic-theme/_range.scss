@@ -1,0 +1,12 @@
+// RANGE SLIDER BAR CUSTOM STYLES
+.range {
+  input {
+    background-size: 98% 4px;
+
+    &::-webkit-slider-thumb {
+      &:before {
+        height: 4px;
+      }
+    }
+  }
+}

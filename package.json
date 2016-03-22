@@ -22,15 +22,19 @@
     "ionic",
     "angularjs",
     "mobile",
-    "html5", 
+    "html5",
     "bower",
     "grunt"
   ],
   "dependencies": {
-     "appverse-generator-commons": "0.0.4",   
-     "yeoman-generator": "^0.22.1"
+    "appverse-generator-commons": "0.0.4",
+    "underscore": "^1.8.3",
+    "yeoman-generator": "^0.22.5"
   },
   "devDependencies": {
-    "mocha": "*"
+    "fs-extra": "^0.26.0",
+    "mocha": "*",
+    "yeoman-assert": "^2.1.1",
+    "yeoman-test": "^1.1.0"
   }
 }

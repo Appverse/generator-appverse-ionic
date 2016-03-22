@@ -1,0 +1,48 @@
+.ionic-example {
+  .bar {
+    position: relative;
+  }
+
+  button,
+  .button-bar {
+    margin-bottom: .4em;
+  }
+}
+
+.box {
+  height: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $light;
+  }
+}
+
+.ionic-example {
+  .tabs {
+    position: relative;
+  }
+
+  .tabs-top .tabs {
+    top: 0;
+  }
+}
+
+@media (min-width:500px) {
+  .icon-list {
+    .item {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width:700px) {
+  .icon-list {
+    .item {
+      width: 33.45%;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+// BARS CUSTOM STYLES
+.bar {
+  border: 1px solid;
+}
+
+.platform-android {
+  .bar {
+    .title {
+      line-height: 48px;
+    }
+  }
+}
+
+.nav-bar-container {
+  .bar-header {
+    transition: all .3s ease;
+  }
+
+  &.scrolled {
+    .bar-header {
+      margin-top: -44px;
+    }
+  }
+}
+
+.has-header {
+  transition: all .3s ease;
+
+  &.scrolled {
+    top: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .bar-header {
+    button[menu-toggle] {
+      display: none;
+    }
+  }
+}

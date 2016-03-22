@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<html class="no-js" manifest="cache.manifest">-->
+<html class="no-js" ng-app="<%=appName%>App">
+<!--<![endif]-->
+
+<head>
+    <title data-ng-bind="'<%=appName%> - ' + $state.current.name"></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- bower:css --> 
+    <!-- endbower -->
+
+    <!-- include: "type": "css", "files": "<%%= css %>" -->
+   
+    <!-- /include -->
+</head>
+
+<!--Include the module with the app scope-->
+
+<body> 
+    <ion-nav-view></ion-nav-view> 
+    <script src="js/appverse.js"></script>
+    <!-- bower:js --> 
+    <!-- endbower --> 
+    <!-- include: "type": "js", "files": "<%%= scripts %>" --> 
+    <!-- /include --> 
+</body>
+
+</html>

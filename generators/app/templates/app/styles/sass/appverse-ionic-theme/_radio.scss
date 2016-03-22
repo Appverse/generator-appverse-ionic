@@ -1,0 +1,39 @@
+// RADIO BUTTON CUSTOM STYLES
+.item-radio {
+  .radio-icon {
+    opacity: 0;
+    transition: .2s linear all;
+
+    &:before {
+      vertical-align: text-top;
+    }
+  }
+
+  .radio-content .item-content {
+    &:before {
+      content: '';
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background-color: $positive;
+      transition: .2s ease all;
+    }
+  }
+
+  input {
+    &:checked + .radio-content .item-content {
+      background: #fff;
+
+      &:before {
+        width: 100%;
+      }
+    }
+
+    &:checked + .radio-content .radio-icon {
+      color: $positive;
+      opacity: 1;
+    }
+  }
+}

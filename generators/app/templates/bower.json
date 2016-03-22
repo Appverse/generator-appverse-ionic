@@ -1,0 +1,17 @@
+{
+  "name": "<%=appName%>",
+  "version": "0.0.1",
+  "dependencies": {
+    "appverse-web-html5-core": "~0.7.x",
+    "angular-ripple": "*",
+    "angular-chart.js": "~0.7.2",
+    "ionic": "~1.2.4" 
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.8"
+  },
+  "resolutions": {
+    "angular": "~1.4.8",
+     "angular-ui-router": "~0.2.15"
+  }
+}

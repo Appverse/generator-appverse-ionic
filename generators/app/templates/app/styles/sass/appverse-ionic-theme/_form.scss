@@ -1,0 +1,19 @@
+// FORM COMPONENTS CUSTOM STYLES
+.item-input:not(.item-select) {
+  &:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left:0;
+    position: absolute;
+    background-color: $positive;
+    transition: .2s ease all;
+  }
+
+  &.input-focused {
+    &:after {
+      width: 100%;
+    }
+  }
+}

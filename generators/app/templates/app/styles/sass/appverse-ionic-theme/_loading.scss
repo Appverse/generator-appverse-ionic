@@ -1,0 +1,13 @@
+// LOADING CUSTOM STYLES
+.loading {
+  box-shadow: 1px 1px 2px #333;
+  .spinner{
+      display: inline-block;
+      vertical-align: middle;
+  }
+  span {
+    margin-left: 1em;
+    vertical-align: middle;
+    text-shadow: 1px 1px 0 #555;
+  }
+}
