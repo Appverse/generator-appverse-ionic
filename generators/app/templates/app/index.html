@@ -15,23 +15,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- bower:css --> 
+    <!-- build:css styles/css/vendor.css -->
+    <!-- bower:css -->
     <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:css styles/css/styles.css -->
     <!-- include: "type": "css", "files": "<%%= css %>" -->
-   
     <!-- /include -->
+    <!-- endbuild -->
 </head>
 
 <!--Include the module with the app scope-->
 
-<body> 
-    <ion-nav-view></ion-nav-view> 
+<body>
+    <ion-nav-view></ion-nav-view>
     <script src="js/appverse.js"></script>
-    <!-- bower:js --> 
-    <!-- endbower --> 
-    <!-- include: "type": "js", "files": "<%%= scripts %>" --> 
-    <!-- /include --> 
+    <!-- build:js main.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+
+    <!-- include: "type": "js", "files": "<%%= scripts %>" -->
+    <!-- /include -->
+    <!-- endbuild -->
 </body>
 
 </html>
