@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        basePath: 'app',
+        basePath: '<%= paths.app %>',
         templates: {
             html: {
                 js: '<script src="{filePath}"></script>',
@@ -9,8 +9,8 @@ module.exports = {
         }
     },
     myTarget: {
-            files: {
-                'app/index.html': 'app/index.html'
-            }
+        files: {
+            '<%= paths.app %>/index.html': '<%= paths.app %>/index.html'
         }
-}
+    }
+};
