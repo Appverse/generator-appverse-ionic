@@ -34,11 +34,17 @@ module.exports = appverse.extend({
             this.checkVersion();
         }
 
+        if (!this.options.demo) {
+            this.demo = false;
+        } else {
+            this.demo = this.options.demo;
+        }
+
         if (this.options['skip-prompts']) {
             this.skipprompts = true;
         } else {
             this.skipprompts = false;
-        } 
+        }
     },
     prompting: function() {
         if (!this.skipprompts) {
@@ -92,6 +98,12 @@ module.exports = appverse.extend({
         this.moveFiles(this.templatePath(), project.files);
         //TEMPLATES
         this.moveTemplates(this.templatePath(), project.templates);
+
+        // handle demo files
+        if (this.options.demo) {
+            this.moveFiles(this.templatePath(), project.demofiles);
+            this.moveTemplates(this.templatePath(), project.demotemplates);
+        }
     },
     install: function() {
         this.installDependencies({
