@@ -103,6 +103,10 @@ module.exports = appverse.extend({
         if (this.options.demo) {
             this.moveFiles(this.templatePath(), project.demofiles);
             this.moveTemplates(this.templatePath(), project.demotemplates);
+            project.demofiles.forEach(function(demofile) {
+                var name = demofile.replace("app/components/", "");
+                addRouteState(name, this);
+            }, this);
         }
     },
     install: function() {
@@ -122,3 +126,22 @@ module.exports = appverse.extend({
         this.log("Finish.");
     }
 });
+
+
+/**
+ * Add Routing
+ * @param {string} name - rounting name
+ **/
+var addRouteState = function(name, self) {
+    //STATES
+    var hook = '$stateProvider',
+        path = self.destinationPath('app/states/app-states.js'),
+        file = self.fs.read(path),
+        insert = ".state('app." + name + "', {url: '/" + name + "',templateUrl: 'components/" + name + "/" + name + "-mobile.html',controller: '" + slug(name).capitalize().value() + "Controller'})";
+
+    if (file.indexOf(insert) === -1) {
+        var pos = file.lastIndexOf(hook) + hook.length;
+        var output = [file.slice(0, pos), insert, file.slice(pos)].join('');
+        self.fs.write(path, output);
+    }
+}

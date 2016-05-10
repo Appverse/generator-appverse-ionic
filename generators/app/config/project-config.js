@@ -23,8 +23,8 @@ module.exports = {
         ".jsbeautifyrc",
         "LICENSE.md",
         "app/favicon.ico",
-        "app/components/components",
         "app/components/home",
+        "app/components/menu",
         "app/js",
         "app/styles",
         "config",
@@ -38,9 +38,10 @@ module.exports = {
     ],
     demofiles: [
         "app/components/charts",
+        "app/components/components",
         "app/components/icons",
-        "app/components/menu",
         "app/components/selects",
-        "app/components/theme"
+        "app/components/theme",
+        "app/img"
     ]
 }
