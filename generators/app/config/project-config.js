@@ -34,14 +34,13 @@ module.exports = {
         "app/js"
     ],
     demotemplates: [
-
-    ],
-    demofiles: [
         "app/components/charts",
         "app/components/components",
         "app/components/icons",
+        "app/components/theme"
+    ],
+    demofiles: [
         "app/components/selects",
-        "app/components/theme",
         "app/img"
     ]
 }

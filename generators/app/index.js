@@ -103,9 +103,11 @@ module.exports = appverse.extend({
         if (this.options.demo) {
             this.moveFiles(this.templatePath(), project.demofiles);
             this.moveTemplates(this.templatePath(), project.demotemplates);
-            project.demofiles.forEach(function(demofile) {
-                var name = demofile.replace("app/components/", "");
+
+            project.demotemplates.forEach(function(demotemplate) {
+                var name = demotemplate.replace("app/components/", "");
                 addRouteState(name, this);
+                addMenuLink(name, this);
             }, this);
         }
     },
@@ -144,4 +146,45 @@ var addRouteState = function(name, self) {
         var output = [file.slice(0, pos), insert, file.slice(pos)].join('');
         self.fs.write(path, output);
     }
-}
+};
+
+/**
+ * Add menu button
+ * @param {string} name - state name
+ *
+ **/
+
+ var addMenuLink = function(name, self) {
+     var hook = '</ion-list>',
+         path = self.destinationPath('app/components/menu/menu-mobile.html'),
+         file = self.fs.read(path),
+         icon = '';
+
+     //for demo purposes
+     switch (name) {
+         case 'theme':
+            icon = 'edit';
+            break;
+         case 'components':
+            icon = 'social-javascript';
+            break;
+         case 'charts':
+            icon = 'stats-bars';
+            break;
+         case 'icons':
+            icon = 'grid';
+            break;
+         case 'home':
+         default:
+            icon = 'home';
+            break;
+     }
+
+     var insert = "<ion-item menu-close ui-sref=\"app." + name + "\" ui-sref-active=\"active\" class=\"item-icon-left\" angular-ripple><i class=\"icon ion-" + icon + "\"></i><span>" + slug(name).capitalize().value() + "</span></ion-item>";
+
+     if (file.indexOf(insert) === -1) {
+        var pos = file.lastIndexOf(hook);
+        var output = [file.slice(0, pos ), insert, file.slice(pos)].join('');
+        self.fs.write(path, output);
+    }
+ };
