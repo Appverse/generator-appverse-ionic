@@ -34,11 +34,17 @@ module.exports = appverse.extend({
             this.checkVersion();
         }
 
+        if (!this.options.demo) {
+            this.demo = false;
+        } else {
+            this.demo = this.options.demo;
+        }
+
         if (this.options['skip-prompts']) {
             this.skipprompts = true;
         } else {
             this.skipprompts = false;
-        } 
+        }
     },
     prompting: function() {
         if (!this.skipprompts) {
@@ -92,6 +98,18 @@ module.exports = appverse.extend({
         this.moveFiles(this.templatePath(), project.files);
         //TEMPLATES
         this.moveTemplates(this.templatePath(), project.templates);
+
+        // handle demo files
+        if (this.options.demo) {
+            this.moveFiles(this.templatePath(), project.demofiles);
+            this.moveTemplates(this.templatePath(), project.demotemplates);
+
+            project.demotemplates.forEach(function(demotemplate) {
+                var name = demotemplate.replace("app/components/", "");
+                addRouteState(name, this);
+                addMenuLink(name, this);
+            }, this);
+        }
     },
     install: function() {
         this.installDependencies({
@@ -110,3 +128,63 @@ module.exports = appverse.extend({
         this.log("Finish.");
     }
 });
+
+
+/**
+ * Add Routing
+ * @param {string} name - rounting name
+ **/
+var addRouteState = function(name, self) {
+    //STATES
+    var hook = '$stateProvider',
+        path = self.destinationPath('app/states/app-states.js'),
+        file = self.fs.read(path),
+        insert = ".state('app." + name + "', {url: '/" + name + "',templateUrl: 'components/" + name + "/" + name + "-mobile.html',controller: '" + slug(name).capitalize().value() + "Controller'})";
+
+    if (file.indexOf(insert) === -1) {
+        var pos = file.lastIndexOf(hook) + hook.length;
+        var output = [file.slice(0, pos), insert, file.slice(pos)].join('');
+        self.fs.write(path, output);
+    }
+};
+
+/**
+ * Add menu button
+ * @param {string} name - state name
+ *
+ **/
+
+ var addMenuLink = function(name, self) {
+     var hook = '</ion-list>',
+         path = self.destinationPath('app/components/menu/menu-mobile.html'),
+         file = self.fs.read(path),
+         icon = '';
+
+     //for demo purposes
+     switch (name) {
+         case 'theme':
+            icon = 'edit';
+            break;
+         case 'components':
+            icon = 'social-javascript';
+            break;
+         case 'charts':
+            icon = 'stats-bars';
+            break;
+         case 'icons':
+            icon = 'grid';
+            break;
+         case 'home':
+         default:
+            icon = 'home';
+            break;
+     }
+
+     var insert = "<ion-item menu-close ui-sref=\"app." + name + "\" ui-sref-active=\"active\" class=\"item-icon-left\" angular-ripple><i class=\"icon ion-" + icon + "\"></i><span>" + slug(name).capitalize().value() + "</span></ion-item>";
+
+     if (file.indexOf(insert) === -1) {
+        var pos = file.lastIndexOf(hook);
+        var output = [file.slice(0, pos ), insert, file.slice(pos)].join('');
+        self.fs.write(path, output);
+    }
+ };
