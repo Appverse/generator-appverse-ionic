@@ -12,10 +12,22 @@ describe('appverse-ionic:app', function () {
   before(function (done) {
             helpers.run(path.join(__dirname, '../generators/app'))
                 .inTmpDir(function (dir) {
-                    // `dir` is the path to the new temporary directory 
-                    var done = this.async(); 
-                    fse.copy(path.join(__dirname, '../generators/app/templates'), dir, done);
-                }) 
+                    // `dir` is the path to the new temporary directory
+                    fse.copySync(path.join(__dirname, '../generators/app/templates'), dir,
+                                {filter: function(elem) {
+                                    for (var i = 0; i<config.demotemplates.length; i++){
+                                        if (elem.indexOf(config.demotemplates[i])>-1) {
+                                            return false;
+                                        }
+                                    }
+                                    for (var i = 0; i<config.demofiles.length; i++){
+                                        if (elem.indexOf(config.demofiles[i])>-1) {
+                                            return false;
+                                        }
+                                    }
+                                    return true;
+                                }});
+                })
                 .withPrompts({
                     appName: 'test',
                     username: 'username',
@@ -29,8 +41,23 @@ describe('appverse-ionic:app', function () {
                 .on('end', done);
         });
 
-        it('should create files', function (done) {
+        it('should move files', function (done) {
              assert.file(config.files);
+            done();
+        });
+
+        it('should create templates', function (done) {
+             assert.file(config.templates);
+            done();
+        });
+
+        it('should not move demo files', function (done) {
+             assert.file(config.demofiles);
+            done();
+        });
+
+        it('should not create demo templates', function (done) {
+             assert.file(config.demotemplates);
             done();
         });
 });
