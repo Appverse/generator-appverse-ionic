@@ -62,8 +62,10 @@ describe('appverse-ionic:app', function () {
         });
         it('should add appName to files', function() {
             assert.fileContent([
-                ['app/index.html', 'ng-app="testApp">'],
-                ['app/app.js', 'angular.module(\'testApp\', [']
+                [ 'bower.json', '\"name\": \"test\"' ],
+                [ 'package.json', '\"name\": \"test\"' ],
+                [ 'app/index.html', 'ng-app="testApp">' ],
+                [ 'app/app.js', 'angular.module(\'testApp\', [' ]
             ]);
         });
         it('should add style placeholders to index', function () {
@@ -140,8 +142,10 @@ describe('appverse-ionic:app', function () {
         });
         it('should add appName to files', function() {
             assert.fileContent([
-                ['app/index.html', 'ng-app="testApp">'],
-                ['app/app.js', 'angular.module(\'testApp\', [']
+                [ 'bower.json', '\"name\": \"test\"' ],
+                [ 'package.json', '\"name\": \"test\"' ],
+                [ 'app/index.html', 'ng-app="testApp">' ],
+                [ 'app/app.js', 'angular.module(\'testApp\', [' ]
             ]);
         });
         it('should add style placeholders to index', function () {
