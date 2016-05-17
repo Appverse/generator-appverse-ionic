@@ -1,4 +1,4 @@
-## [Appverse HTML5](http://appverse.org/)
+## [Appverse Ionic](http://appverse.org/)
 ![](http://appversed.files.wordpress.com/2012/12/logo.png) + ![]()
 
 ### generator-appverse-ionic[![Build Status](https://secure.travis-ci.org/someuser/generator-appverse-ionic.png?branch=master)](https://travis-ci.org/someuser/generator-appverse-ionic)
@@ -25,7 +25,7 @@ Requirements
 Installing
 -------------
 
-* Install the Appverse HTML5 generator NPM package.
+* Install the Appverse Ionic generator NPM package.
 
 ```bash
     npm install -g generator-appverse-ionic
@@ -121,10 +121,6 @@ Add the skip-install argument to skip npm and bower install process.
     yo appverse-ionic --skip-install
 ```
 
-```bash
-    yo appverse-html5 --project=myProject.json --skip-install
-```
-
 The generator will execute 'grunt list' tasks when finish to report all the available grunt tasks into the README.md of the generated project.
 If --skip-install was used, 'grunt list' wont be executed, as it needs node_modules.
 
@@ -136,7 +132,7 @@ If --skip-install was used, 'grunt list' wont be executed, as it needs node_modu
     grunt list
 ```
 
-###Troubleshoting
+### Troubleshoting
 
 * Browser-Sync
 
