@@ -1,5 +1,5 @@
 ## [Appverse HTML5](http://appverse.org/)
-![](http://appversed.files.wordpress.com/2012/12/logo.png)
+![](http://appversed.files.wordpress.com/2012/12/logo.png) + ![]()
 
 ### generator-appverse-ionic[![Build Status](https://secure.travis-ci.org/someuser/generator-appverse-ionic.png?branch=master)](https://travis-ci.org/someuser/generator-appverse-ionic)
 
@@ -108,7 +108,7 @@ Execution:
 
 It's possible to call the generator using arguments and skipping prompts.
 
-* The first option is to show cod efor demonstration purposes
+* The first option is to show code for demonstration purposes
 
 ```bash
     $ yo appverse-ionic --code
@@ -118,15 +118,11 @@ It's possible to call the generator using arguments and skipping prompts.
 Add the skip-install argument to skip npm and bower install process.
 
 ```bash
-    yo appverse-html5 --skip-install
+    yo appverse-ionic --skip-install
 ```
 
 ```bash
     yo appverse-html5 --project=myProject.json --skip-install
-```
-
-```bash
-    yo appverse-html5 myWeb --skip-install
 ```
 
 The generator will execute 'grunt list' tasks when finish to report all the available grunt tasks into the README.md of the generated project.
@@ -186,11 +182,6 @@ Some dependant pagackages use **node-gyp**, a cross-platform command-line tool w
 
     call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x86
     call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
-
-
-## Appverse Showcase
-[Appverse HTML5 Showcase](https://appverse.gftlabs.com/showcase-html5/new)
-
 
 ## License
 
