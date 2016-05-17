@@ -1,5 +1,5 @@
 ## [Appverse Ionic](http://appverse.org/)
-![](http://appversed.files.wordpress.com/2012/12/logo.png) + ![]()
+![](http://appversed.files.wordpress.com/2012/12/logo.png)
 
 ### generator-appverse-ionic[![Build Status](https://secure.travis-ci.org/someuser/generator-appverse-ionic.png?branch=master)](https://travis-ci.org/someuser/generator-appverse-ionic)
 
