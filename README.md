@@ -136,7 +136,7 @@ If --skip-install was used, 'grunt list' wont be executed, as it needs node_modu
 
 * Browser-Sync
 
-Browser-Sync is a tool for synchronized cross-device testing; useful when you’re targeting the multi-device web.
+Browser-Sync is a tool for synchronized cross-device testing; useful when youâ€™re targeting the multi-device web.
 Having trouble installing Browsersync on Windows? The most common reason for npm to throw errors when compiling **Browser-Sync** is that some of the dependencies (e.g. node-gypneed Visual C++ runtime libraries.The way to resolve this is to install [Visual Studio](https://www.visualstudio.com). At the time of this writing (Feb 2015) the compilation works fine with Visual Studio 2013 Update 4. You can then tell **npm** which version of Visual Studio you are using by the following command:
 
 ```bash
