@@ -22,9 +22,8 @@
 'use strict';
 
 angular.module('App.Controllers')
-
     .controller('IconsController',
-        function ($log, $scope) {
+        ['$log', '$scope', function ($log, $scope) {
             $log.debug('IconsController loading');
 
             $scope.icons = [
@@ -760,4 +759,4 @@ angular.module('App.Controllers')
                 "ion-social-euro-outline"
             ];
 
-        });
+        }]);

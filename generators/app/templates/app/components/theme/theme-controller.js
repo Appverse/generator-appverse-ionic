@@ -23,8 +23,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 angular.module('App.Controllers')
     .controller('ThemeController',
-        function ($log, $scope) {
-            $log.debug('ThemeController loading'); 
+        ['$log', '$scope', function ($log, $scope) {
+            $log.debug('ThemeController loading');
             $scope.listElements = [{
                 name: "List element 1",
                 icon: "icon ion-email",
@@ -91,4 +91,4 @@ angular.module('App.Controllers')
                     name: "List element 6",
                     class: "item"
                 }];
-        });
+        }]);
