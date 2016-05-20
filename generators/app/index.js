@@ -27,12 +27,24 @@ var appverse = require('appverse-generator-commons');
 var pkg = require("../../package.json");
 
 module.exports = appverse.extend({
+    constructor: function () {
+        // Calling the super constructor
+        appverse.apply(this, arguments);
+
+        //adding a custom option
+        this.option('demo', {
+            alias: 'd',
+            desc: 'Loads demo code for example purposes'
+        }); //Adds support for --demo flag
+    },
     initializing: function() {
         this.conflicter.force = true;
         if (!this.options['skip-welcome-message']) {
             this.welcome(pkg);
             this.checkVersion();
         }
+
+        
 
         if (!this.options.demo) {
             this.demo = false;

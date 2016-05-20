@@ -24,6 +24,7 @@
 angular.module('App.Controllers')
 
     .controller('ComponentsController',
+        ['$log', '$scope', '$ionicModal', '$ionicActionSheet', '$timeout', '$ionicLoading', '$ionicPopover', '$ionicPopup',
         function ($log, $scope, $ionicModal, $ionicActionSheet, $timeout, $ionicLoading, $ionicPopover, $ionicPopup) {
             $log.debug('ComponentsController loading');
 
@@ -80,7 +81,7 @@ angular.module('App.Controllers')
                 }, {
                     id: 15
                 }];
-                
+
             //ACTIONSHEET EXAMPLE
             $scope.showActionsheet = function () {
 
@@ -108,7 +109,7 @@ angular.module('App.Controllers')
                 }, 3000);
 
             };
-            
+
             //LOADING EXAMPLE
             $scope.showLoading = function () {
                 $ionicLoading.show({
@@ -121,7 +122,7 @@ angular.module('App.Controllers')
             $scope.hideLoading = function () {
                 $ionicLoading.hide();
             };
-           
+
             //MODAL EXAMPLE
             $ionicModal.fromTemplateUrl('/components/components/modal-template-mobile.html', {
                 scope: $scope,
@@ -243,4 +244,4 @@ angular.module('App.Controllers')
             });
 
 
-        });
+        }]);

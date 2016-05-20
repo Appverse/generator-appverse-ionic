@@ -8,8 +8,7 @@ var collector = new istanbul.Collector();
 exports.config = {
     seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.47.1.jar',
     seleniumArgs: [
-        '-Dwebdriver.ie.driver=node_modules/protractor/selenium/IEDriverServer.exe',
-        '-browserTimeout=60'
+        '-browserTimeout=100'
     ],
     specs: ['e2e/init.js', 'e2e/**/*.js'],
     allScriptsTimeout: 60000,

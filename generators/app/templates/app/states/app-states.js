@@ -8,8 +8,7 @@
 'use strict';
 
 angular.module('<%=appName%>App')
-    .config(
-        ['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
+    .config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
             function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
                 // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
                 $urlRouterProvider.otherwise('/app/home');
@@ -28,6 +27,6 @@ angular.module('<%=appName%>App')
                     templateUrl: 'components/home/home-mobile.html'
                 })
                 ;
-               
+
                 $ionicConfigProvider.scrolling.jsScrolling(false);
             }]);

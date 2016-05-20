@@ -22,7 +22,8 @@ POSSIBILITY OF SUCH DAMAGE.
 'use strict';
 
 angular.module('App.Controllers')
-    .controller('HomeController', function ($log, $scope) {
-            $log.debug('HomeController loading'); 
+    .controller('HomeController',
+    ['$log', '$scope', function ($log, $scope) {
+            $log.debug('HomeController loading');
             $scope.greeting = 'Welcome';
-    });
+    }]);
