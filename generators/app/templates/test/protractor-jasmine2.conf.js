@@ -16,18 +16,18 @@ exports.config = {
     baseUrl: 'http://127.0.0.1:9200',
     framework: 'jasmine2',
     multiCapabilities: [{
-        //     browserName: 'phantomjs',
-        //     'phantomjs.binary.path': require('phantomjs').path,
-        //     'phantomjs.cli.args': ['--ignore-ssl-errors=true', '--web-security=false'],
-        // }
-        // {
-           browserName: 'chrome'
+            browserName: 'phantomjs',
+            'phantomjs.binary.path': require('phantomjs').path,
+            'phantomjs.cli.args': ['--ignore-ssl-errors=true', '--web-security=false'],
         }
-        //        , {
-        //            browserName: 'firefox'
-        //        }, {
-        //            browserName: 'internet explorer'
-        //        }
+        // , {
+        //    browserName: 'chrome'
+        // }
+        // , {
+        //    browserName: 'firefox'
+        // }, {
+        //    browserName: 'internet explorer'
+        // }
     ],
     plugins: [{
         path: './waitPlugin.js'
