@@ -8,7 +8,7 @@ var collector = new istanbul.Collector();
 exports.config = {
     seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.52.0.jar',
     seleniumArgs: [
-        '-browserTimeout=500'
+        '-browserTimeout=1000'
     ],
     specs: ['e2e/init.js', 'e2e/**/*.js'],
     allScriptsTimeout: 60000,
@@ -36,6 +36,7 @@ exports.config = {
         var jasmineReporters = require('jasmine-reporters');
         var capsPromise = browser.getCapabilities();
         var jasmineEnv = jasmine.getEnv();
+        browser.driver.ignoreSynchronization = true;
         capsPromise.then(function(caps) {
             var browserName = caps.get("browserName").toUpperCase();
             var browserVersion = caps.get("version");
