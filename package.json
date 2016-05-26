@@ -10,9 +10,6 @@
     "email": "",
     "url": "https://github.com/appverse"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "files": [
     "generators"
   ],

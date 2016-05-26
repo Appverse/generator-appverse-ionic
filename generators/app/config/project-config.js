@@ -30,7 +30,11 @@ module.exports = {
         "config",
         "mobile-builder-bundle",
         "tasks",
-        "test",
+        "test/unit",
+        "test/e2e/init.js",
+        "test/karma-unit.conf.js",
+        "test/protractor-jasmine2.conf.js",
+        "test/waitPlugin.js",
         "app/js"
     ],
     demotemplates: [
@@ -40,6 +44,7 @@ module.exports = {
         "app/components/theme"
     ],
     demofiles: [
+        "test/e2e/routesSpec.js",
         "app/components/selects",
         "app/img"
     ]

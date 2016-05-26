@@ -53,10 +53,10 @@
     "lodash": "3.7.0",
     "ng-describe": "^1.4.1",
     "opn": "^4.0.1",
-    "phantomjs": "1.9.8",
+    "phantomjs": "^2.1.7",
     "plist": "^1.1.0",
     "promise": "^7.0.1",
-    "protractor": "^2.1.0",
+    "protractor": "^3.3.0",
     "q": "^1.4.1",
     "sinon": "^1.17.2",
     "time-grunt": "1.1.1"
