@@ -9,6 +9,8 @@ module.exports = function(grunt) {
         'postcss:css',
         'instrument',
         'browserSync:test',
+        'wiredep',
+        'includeSource',
         'shell:jasmine2'
     ]);
 
@@ -30,6 +32,8 @@ module.exports = function(grunt) {
         'postcss:css',
         'instrument',
         'browserSync:test',
+        'wiredep',
+        'includeSource',
         'shell:jasmine2'
     ]);
 
