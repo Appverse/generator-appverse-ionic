@@ -3,10 +3,50 @@
 
 describe('E2E: Testing Actions', function () {
 
-    describe ('theme page', function () {
+    describe ('components page', function () {
 
         beforeAll( function () {
             browser.setLocation('app/components');
+        });
+
+        it('should delete an ion-list item', function () {
+            expect(element(by.css('ion-item[href="#/item/0"] .item-delete')).isDisplayed()).toBeFalsy();
+            element(by.css('div.ionic-example ion-header-bar button.button-icon')).click();
+            expect(element(by.css('ion-item[href="#/item/0"] .item-delete')).isDisplayed()).toBeTruthy();
+            element(by.css('ion-item[href="#/item/0"] ion-delete-button')).click();
+            expect(element(by.css('ion-item[href="#/item/0"]')).isPresent()).toBeFalsy();
+        });
+
+        it('should show an alert popup and then hide it', function () {
+           expect(element(by.css('div.popup-showing')).isPresent()).toBeFalsy();
+           element(by.css('button[ng-click="showAlert()"]')).click()
+           expect(element(by.css('div.popup-showing')).isPresent()).toBeTruthy();
+           element(by.css('div.popup-showing button')).click();
+           expect(element(by.css('div.popup-showing')).isPresent()).toBeFalsy();
+        });
+
+        it('should change slider', function () {
+            expect(element(by.css('ion-slides div.swiper-slide-active div.calm-bg')).isPresent()).toBeTruthy();
+            element(by.css('div.swiper-pagination-clickable span:nth-of-type(2)')).click();
+            expect(element(by.css('ion-slides div.swiper-slide-prev div.calm-bg')).isPresent()).toBeTruthy();
+            expect(element(by.css('ion-slides div.swiper-slide-active div.balanced-bg')).isPresent()).toBeTruthy();
+            expect(element(by.css('ion-slides div.swiper-slide-next div.energized-bg')).isPresent()).toBeTruthy();
+            element(by.css('div.swiper-pagination-clickable span:nth-of-type(3)')).click();
+            expect(element(by.css('ion-slides div.swiper-slide-active div.calm-bg')).isPresent()).toBeFalsy();
+            expect(element(by.css('ion-slides div.swiper-slide-prev div.balanced-bg')).isPresent()).toBeTruthy();
+            expect(element(by.css('ion-slides div.swiper-slide-active div.energized-bg')).isPresent()).toBeTruthy();
+        });
+
+        it('should change focus in ion-tabs', function () {
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-filing')).isPresent()).toBeTruthy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-clock-outline')).isPresent()).toBeTruthy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-filing-outline')).isPresent()).toBeFalsy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-clock')).isPresent()).toBeFalsy();
+            element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a:nth-of-type(2)')).click();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-filing-outline')).isPresent()).toBeTruthy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-clock')).isPresent()).toBeTruthy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-filing')).isPresent()).toBeFalsy();
+            expect(element(by.css('.ionic-example ion-tabs.tabs-color-assertive div.tabs a i.ion-ios-clock-outline')).isPresent()).toBeFalsy();
         });
 
     });
