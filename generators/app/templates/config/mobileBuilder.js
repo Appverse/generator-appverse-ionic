@@ -3,7 +3,7 @@
  module.exports = function (grunt) {
      return {
          options: {
-             url: 'https://builderhostname' + '/builder/service_5_0',
+             url: 'https://' + grunt.config.get('mobileBuilder.hostname') + '/newbuilder/service_5_0',
              method: 'POST',
              rejectUnauthorized: false,
              headers: {
@@ -11,7 +11,7 @@
              },
              data: {
                  // Addresses where to email the result (separated by commas)
-                 addressList: ''
+                 addressList: grunt.config.get('mobileBuilder.email')
              },
 
              onComplete: function (data) {

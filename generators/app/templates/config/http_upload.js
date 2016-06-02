@@ -11,15 +11,15 @@
          // Builds iOS and Android\n" +
          mobileBuilder: {
              options: {
-                 url: 'https://builderhostname/builder/service_5_0',
+                 url: 'https://builderhostname/newbuilder/service_5_0',
                  method: 'POST',
                  rejectUnauthorized: false,
                  headers: {
-                     'Authorization': 'Basic ' + new Buffer('username:password').toString('base64')
+                     'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
                  },
                  data: {
                      // Addresses where to email the result (separated by commas)\n" +
-                     addressList: ''
+                     addressList: grunt.config.get('mobileBuilder.email')
                  },
                  onComplete: function (data) {
                      // Get build id from log and set is as grunt global variable \n" +
@@ -42,14 +42,14 @@
                  method: 'POST',
                  rejectUnauthorized: false,
                  headers: {
-                     'Authorization': 'Basic ' + new Buffer('username:password').toString('base64')
+                     'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
                  },
                  data: {
                      // Addresses where to email the result (separated by commas)\n" +
                      // In this case it is COMPULSORY to specify an address as\n" +
                      // you only download an encrypted .zip file. The password\n" +
                      // will be sent in the email\n" +
-                     addressList: ''
+                     addressList: grunt.config.get('mobileBuilder.email')
                  },
                  onComplete: function (data) {
                      // Get build id from log and set is as grunt global variable \n" +

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
         var downloadPath = grunt.config.get('paths.mobileDist');
         var downloadOptions = {
             host: grunt.config.get('mobileBuilder.hostname'),
-            baseUrl: '/builder/dist/' + grunt.option('buildId'),
+            baseUrl: '/newbuilder/dist/' + grunt.option('buildId'),
             appName: '<%%=appName%>'
         };
 
