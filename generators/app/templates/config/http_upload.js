@@ -15,11 +15,11 @@
                  method: 'POST',
                  rejectUnauthorized: false,
                  headers: {
-                     'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
+                     'Authorization': 'Basic ' + new Buffer('user:password').toString('base64')
                  },
                  data: {
                      // Addresses where to email the result (separated by commas)\n" +
-                     addressList: grunt.config.get('mobileBuilder.email')
+                     addressList: 'mail@mail.mail'
                  },
                  onComplete: function (data) {
                      // Get build id from log and set is as grunt global variable \n" +
@@ -42,14 +42,14 @@
                  method: 'POST',
                  rejectUnauthorized: false,
                  headers: {
-                     'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
+                     'Authorization': 'Basic ' + new Buffer('user:password').toString('base64')
                  },
                  data: {
                      // Addresses where to email the result (separated by commas)\n" +
                      // In this case it is COMPULSORY to specify an address as\n" +
                      // you only download an encrypted .zip file. The password\n" +
                      // will be sent in the email\n" +
-                     addressList: grunt.config.get('mobileBuilder.email')
+                     addressList: 'mail@mail.mail'
                  },
                  onComplete: function (data) {
                      // Get build id from log and set is as grunt global variable \n" +
