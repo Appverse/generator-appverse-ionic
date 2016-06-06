@@ -45,6 +45,7 @@ module.exports = {
     ],
     demofiles: [
         "test/e2e/routesSpec.js",
+        "test/e2e/actionsSpec.js",
         "app/components/selects",
         "app/img"
     ]

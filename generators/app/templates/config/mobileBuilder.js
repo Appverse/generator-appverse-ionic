@@ -3,15 +3,15 @@
  module.exports = function (grunt) {
      return {
          options: {
-             url: 'https://builderhostname' + '/builder/service_5_0',
+             url: 'https://' + grunt.config.get('mobileBuilder.hostname') + '/newbuilder/service_5_0',
              method: 'POST',
              rejectUnauthorized: false,
              headers: {
-                 'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
+                 'Authorization': 'Basic ' + new Buffer('username:password').toString('base64')
              },
              data: {
                  // Addresses where to email the result (separated by commas)
-                 addressList: ''
+                 addressList: 'email@email.email'
              },
 
              onComplete: function (data) {
