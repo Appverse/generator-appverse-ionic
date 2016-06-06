@@ -45,6 +45,11 @@ exports.config = {
                 savePath: 'test/reports/e2e',
                 filePrefix: prePendStr
             }));
+            jasmineEnv.addReporter( new jasmineReporters.TerminalReporter({
+                verbosity: 3,
+                color: true,
+                showStack: true
+            }));
         });
         return capsPromise;
     },

@@ -25,8 +25,8 @@ module.exports = function (grunt) {
         var downloadPath = grunt.config.get('paths.mobileDist');
         var downloadOptions = {
             host: grunt.config.get('mobileBuilder.hostname'),
-            baseUrl: '/builder/dist/' + grunt.option('buildId'),
-            appName: '<%%=appName%>'
+            baseUrl: '/newbuilder/dist/' + grunt.option('buildId'),
+            appName: '<%=appName%>'
         };
 
         grunt.log.writeln('Build available at https://' + downloadOptions.host + downloadOptions.baseUrl);
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 windowsBuilder: true,
                 host: grunt.config.get('mobileBuilder.hostname'),
                 baseUrl: relativeUrl,
-                appName: '<%%=appName%>'
+                appName: '<%=appName%>'
             };
 
             grunt.log.writeln('Build available at https://' + downloadOptions.host + downloadOptions.baseUrl);
