@@ -7,11 +7,11 @@
              method: 'POST',
              rejectUnauthorized: false,
              headers: {
-                 'Authorization': 'Basic ' + new Buffer(grunt.config.get('mobileBuilder.username') + ':' + grunt.config.get('mobileBuilder.password')).toString('base64')
+                 'Authorization': 'Basic ' + new Buffer('username:password').toString('base64')
              },
              data: {
                  // Addresses where to email the result (separated by commas)
-                 addressList: grunt.config.get('mobileBuilder.email')
+                 addressList: 'email@email.email'
              },
 
              onComplete: function (data) {
