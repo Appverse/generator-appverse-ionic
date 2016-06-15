@@ -8,11 +8,7 @@ describe('E2E: Testing home view', function () {
     });
 
     it('should have a working /home route', function () {
-        expect(browser.getLocationAbsUrl()).toBe('/home');
-    });
-
-    it('should have a greeting title', function () {
-        expect(element(by.binding('greeting')).getText()).toBe('Welcome to \'<%=appName%>\'');
+        expect(browser.getLocationAbsUrl()).toBe('/app/home');
     });
 
 });

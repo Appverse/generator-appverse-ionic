@@ -22,7 +22,7 @@ module.exports = {
             ]
         }, {
             expand: true,
-            cwd: '<%=paths.app%>/bower_components/bootstrap-sass/assets/fonts/bootstrap',
+            cwd: '<%=paths.app%>/bower_components/ionic/release/fonts',
             dest: '<%=paths.dist%>/styles/fonts',
             src: '**/*'
         }, {
@@ -71,7 +71,7 @@ module.exports = {
     },
     fonts: {
         expand: true,
-        cwd: '<%=paths.app%>/bower_components/bootstrap-sass/assets/fonts/bootstrap',
+        cwd: '<%=paths.app%>/bower_components/ionic/release/fonts',
         dest: 'app/styles/fonts',
         src: '**/*'
     },

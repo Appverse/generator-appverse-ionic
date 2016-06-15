@@ -1,1 +1,1 @@
-browser.driver.get('');
+browser.driver.get('http://localhost:9200');

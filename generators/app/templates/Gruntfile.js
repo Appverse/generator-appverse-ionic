@@ -21,12 +21,13 @@ module.exports = function (grunt) {
         ports: {
             app: '9000',
             dist: '9100',
-            doc: '9200',
-            test: '9300'
+            test: '9200',
+            doc: '9300'
         },
         scripts: [
             'app.js',
             'states/*.js',
+            'js/**/*.js',
             'components/**/*-module.js',
             'components/**/*.js',
             '!components/**/*.spec.js'
@@ -55,5 +56,4 @@ module.exports = function (grunt) {
     grunt.config.set('mobileBuilder.email', '<%email%>');
 
 };
-  
-              
+

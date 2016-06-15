@@ -21,16 +21,16 @@ POSSIBILITY OF SUCH DAMAGE.
 'use strict';
 
 angular.module('App.Controllers')
-    .controller('ChartsController', ['$scope', '$interval',
-        function ($scope, $interval) {
+    .controller('ChartsController',
+     ['$scope', '$interval', function ($scope, $interval) {
         $scope.name = 'Charts';
         //Lines
         $scope.labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
         $scope.series = ['Series A', 'Series B'];
         $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
-  ];
+            [65, 59, 80, 81, 56, 55, 40],
+            [28, 48, 40, 19, 86, 27, 90]
+        ];
         //Doughnut
         $scope.doughnutData = [300, 500, 100];
         $scope.doughnutLabels = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
@@ -38,8 +38,8 @@ angular.module('App.Controllers')
         //Radar
         $scope.radarLabels = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
         $scope.radarData = [
-    [65, 59, 90, 81, 56, 55, 40],
-    [28, 48, 40, 19, 96, 27, 100]];
+        [65, 59, 90, 81, 56, 55, 40],
+        [28, 48, 40, 19, 96, 27, 100]];
 
         //Pie
         $scope.pieLabels = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];

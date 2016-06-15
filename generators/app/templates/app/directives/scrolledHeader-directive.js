@@ -1,4 +1,5 @@
-angular.module('<%=appName%>App').directive('ionicScrolled', function($rootScope) {
+angular.module('<%=appName%>App')
+.directive('ionicScrolled', ['$rootScope', function($rootScope) {
 
   return {
     link: function(scope, element, attrs, ctrl) {
@@ -24,5 +25,5 @@ angular.module('<%=appName%>App').directive('ionicScrolled', function($rootScope
 
     }
   };
-});
- 
+}]);
+

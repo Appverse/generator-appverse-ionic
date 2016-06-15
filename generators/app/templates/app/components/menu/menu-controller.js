@@ -22,6 +22,7 @@ POSSIBILITY OF SUCH DAMAGE.
 'use strict';
 
 angular.module('App.Controllers')
-    .controller('MenuController', function ($log, $scope) {
-            $log.debug('MenuController loading'); 
-    });
+    .controller('MenuController',
+    ['$log', '$scope', function ($log, $scope) {
+            $log.debug('MenuController loading');
+    }]);
