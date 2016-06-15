@@ -1,23 +1,31 @@
 {
   "name": "generator-appverse-ionic",
   "version": "0.0.1",
-  "description": "Appverse Ionic Yeoman generator",
+  "description": "Appverse Ionic generator",
   "license": "MPL-2.0",
   "main": "app/index.js",
   "repository": "appverse/generator-appverse-ionic",
   "author": {
-    "name": "",
-    "email": "",
-    "url": "https://github.com/appverse"
+    "name": "Appverse",
+    "email": "github@appverse.org",
+    "url": "http://appverse.org"
+  },
+  "engines": {
+    "node": ">=4.2.0",
+    "npm": ">=2.14.0"
   },
   "files": [
     "generators"
   ],
   "keywords": [
     "yeoman-generator",
+    "appverse-ionic-generator",
     "appverse",
     "ionic",
     "angularjs",
+    "angular",
+    "scaffold",
+    "ui",
     "mobile",
     "html5",
     "bower",
@@ -30,8 +38,15 @@
   },
   "devDependencies": {
     "fs-extra": "^0.26.0",
+    "istanbul": "^0.4.0",
     "mocha": "*",
+    "xunit-file": "0.0.9",
     "yeoman-assert": "^2.1.1",
     "yeoman-test": "^1.1.0"
+  },
+  "scripts": {
+    "test": "npm run unit && npm run report",
+    "unit": "node node_modules/istanbul/lib/cli.js cover --include-all-sources -x **/templates/** node_modules/mocha/bin/_mocha",
+    "report": "node node_modules/mocha/bin/_mocha --reporter node_modules/xunit-file"
   }
 }
