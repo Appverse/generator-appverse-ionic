@@ -1,7 +1,8 @@
-## [Appverse Ionic](http://appverse.org/)
 ![](http://appversed.files.wordpress.com/2012/12/logo.png)
 
-### generator-appverse-ionic[![Build Status](https://secure.travis-ci.org/someuser/generator-appverse-ionic.png?branch=master)](https://travis-ci.org/someuser/generator-appverse-ionic)
+[![NPM](https://nodei.co/npm/generator-appverse-ionic.png)](https://nodei.co/npm/generator-appverse-ionic)
+
+[![NPM](https://nodei.co/npm-dl/generator-appverse-ionic.png?months=1)](https://nodei.co/npm/generator-appverse-ionic)
 
 This is a [Yeoman](http://yeoman.io) Generator for Appverse - Ionic
 
